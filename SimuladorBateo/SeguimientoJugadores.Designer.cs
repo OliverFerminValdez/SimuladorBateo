@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SeguimientoDGV = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SeguimientoDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +55,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Seguimiento de jugadores";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // SeguimientoJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -73,5 +80,6 @@
 
         private System.Windows.Forms.DataGridView SeguimientoDGV;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

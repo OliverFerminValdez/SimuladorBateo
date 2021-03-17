@@ -34,6 +34,8 @@
             this.DiaNUD = new System.Windows.Forms.NumericUpDown();
             this.Dia = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.FallosNUD = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +48,7 @@
             this.AntesPB = new System.Windows.Forms.PictureBox();
             this.MaquinaPB = new System.Windows.Forms.PictureBox();
             this.AccionPanel = new System.Windows.Forms.Panel();
-            this.PromedioNUD = new System.Windows.Forms.NumericUpDown();
+            this.PromedioTb = new System.Windows.Forms.TextBox();
             this.LanzamientosTotalesNUD = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,9 +62,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Movimiento = new System.Windows.Forms.Timer(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DiaNUD)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FallosNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HRNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoulsNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitsNUD)).BeginInit();
@@ -72,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AntesPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaquinaPB)).BeginInit();
             this.AccionPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PromedioNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanzamientosTotalesNUD)).BeginInit();
             this.DiagnosticoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +126,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.FallosNUD);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -130,10 +135,28 @@
             this.panel2.Controls.Add(this.FoulsNUD);
             this.panel2.Controls.Add(this.HitsNUD);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(868, 389);
+            this.panel2.Location = new System.Drawing.Point(767, 389);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(379, 129);
+            this.panel2.Size = new System.Drawing.Size(480, 129);
             this.panel2.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(299, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 24);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Fallos";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // FallosNUD
+            // 
+            this.FallosNUD.Location = new System.Drawing.Point(371, 48);
+            this.FallosNUD.Name = "FallosNUD";
+            this.FallosNUD.Size = new System.Drawing.Size(104, 28);
+            this.FallosNUD.TabIndex = 21;
             // 
             // label6
             // 
@@ -242,7 +265,7 @@
             // AccionPanel
             // 
             this.AccionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AccionPanel.Controls.Add(this.PromedioNUD);
+            this.AccionPanel.Controls.Add(this.PromedioTb);
             this.AccionPanel.Controls.Add(this.LanzamientosTotalesNUD);
             this.AccionPanel.Controls.Add(this.label3);
             this.AccionPanel.Controls.Add(this.label2);
@@ -256,12 +279,12 @@
             this.AccionPanel.Size = new System.Drawing.Size(685, 129);
             this.AccionPanel.TabIndex = 5;
             // 
-            // PromedioNUD
+            // PromedioTb
             // 
-            this.PromedioNUD.Location = new System.Drawing.Point(180, 82);
-            this.PromedioNUD.Name = "PromedioNUD";
-            this.PromedioNUD.Size = new System.Drawing.Size(168, 28);
-            this.PromedioNUD.TabIndex = 16;
+            this.PromedioTb.Location = new System.Drawing.Point(180, 81);
+            this.PromedioTb.Name = "PromedioTb";
+            this.PromedioTb.Size = new System.Drawing.Size(168, 28);
+            this.PromedioTb.TabIndex = 15;
             // 
             // LanzamientosTotalesNUD
             // 
@@ -363,7 +386,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(25, 23);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 35);
+            this.button1.Size = new System.Drawing.Size(80, 47);
             this.button1.TabIndex = 7;
             this.button1.Text = "play";
             this.button1.UseVisualStyleBackColor = true;
@@ -372,9 +395,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(106, 23);
+            this.button2.Location = new System.Drawing.Point(129, 23);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
+            this.button2.Size = new System.Drawing.Size(75, 47);
             this.button2.TabIndex = 8;
             this.button2.Text = "Pause";
             this.button2.UseVisualStyleBackColor = true;
@@ -385,11 +408,23 @@
             this.Movimiento.Interval = 1;
             this.Movimiento.Tick += new System.EventHandler(this.Movimiento_Tick);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(427, 559);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(270, 34);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Seguimiento de jugadores";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Simulador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 566);
+            this.ClientSize = new System.Drawing.Size(1259, 605);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DiagnosticoPanel);
@@ -406,6 +441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DiaNUD)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FallosNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HRNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoulsNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HitsNUD)).EndInit();
@@ -416,7 +452,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaquinaPB)).EndInit();
             this.AccionPanel.ResumeLayout(false);
             this.AccionPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PromedioNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LanzamientosTotalesNUD)).EndInit();
             this.DiagnosticoPanel.ResumeLayout(false);
             this.DiagnosticoPanel.PerformLayout();
@@ -454,10 +489,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown PromedioNUD;
         private System.Windows.Forms.NumericUpDown DiaNUD;
         private System.Windows.Forms.PictureBox DespuesPB;
         private System.Windows.Forms.Timer Movimiento;
+        private System.Windows.Forms.TextBox PromedioTb;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown FallosNUD;
+        private System.Windows.Forms.Button button3;
     }
 }
 

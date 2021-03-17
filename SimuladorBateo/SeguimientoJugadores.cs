@@ -19,7 +19,12 @@ namespace SimuladorBateo
 
         private void SeguimientoJugadores_Load(object sender, EventArgs e)
         {
-            SeguimientoDGV.DataSource = Simulador.ListaJugadores;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            SeguimientoDGV.DataSource = Simulador.ListaJugadores.Where(t => t.Turnos > 0).ToList();
         }
     }
 }
