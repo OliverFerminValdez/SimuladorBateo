@@ -99,6 +99,7 @@ namespace SimuladorBateo
             if(ContadorDias == 5) 
             {
                 ContadorDias = 0;
+                TotalLanzamientos = 0;
                 JugadorEnTurno = JugadorBLL.Buscar(JugadorEnTurno.JugadorId + 1);
                 Actualizar();
             }
@@ -163,7 +164,7 @@ namespace SimuladorBateo
             FoulsNUD.Value = JugadorEnTurno.Fouls;
             HRNUD.Value = JugadorEnTurno.HR;
             //
-            JugadorEnTurno.Turnos = TotalLanzamientos-1;
+            JugadorEnTurno.Turnos = TotalLanzamientos;
             JugadorEnTurno.Promedio = Math.Round((double)(JugadorEnTurno.HR + JugadorEnTurno.Hits)/TotalLanzamientos,2);
             PromedioTb.Text = JugadorEnTurno.Promedio.ToString();
         }
@@ -171,11 +172,11 @@ namespace SimuladorBateo
         {
             if(JugadorEnTurno.EstadoDeSalud != "Esta sano") 
             {
-                
-                if(JugadorEnTurno.EstadoDeSalud == "Se contagio de gripe") { ContadorGripe--; }
-                if (JugadorEnTurno.EstadoDeSalud == "Se trasnocho") { ContadorTrasnocho--; }
-                if (JugadorEnTurno.EstadoDeSalud == "Esta resacado") { ContadorResaca--; }
-                if (JugadorEnTurno.EstadoDeSalud == "Se contagio de COVID") { ContadorCOVID--; }
+                SeHaEnfermado = true;
+                if(JugadorEnTurno.EstadoDeSalud == "Se contagio de gripe") { JugadorEnTurno.Problema = "Se contagio de la gripe";  ContadorGripe--; }
+                if (JugadorEnTurno.EstadoDeSalud == "Se trasnocho") { JugadorEnTurno.Problema = "Se trasnocho"; ContadorTrasnocho--; }
+                if (JugadorEnTurno.EstadoDeSalud == "Esta resacado") { JugadorEnTurno.Problema = "Tomo mucho alcohol"; ContadorResaca--; }
+                if (JugadorEnTurno.EstadoDeSalud == "Se contagio de COVID") { JugadorEnTurno.Problema = "Se contagio de la COVID"; ContadorCOVID--; }
 
                 if (ContadorGripe == 0) { JugadorEnTurno.EstadoDeSalud = "Esta sano";  SeHaEnfermado = true; }
                 if (ContadorResaca == 0) { JugadorEnTurno.EstadoDeSalud = "Esta sano"; SeHaEnfermado = true; }

@@ -42,14 +42,14 @@
             this.SeguimientoDGV.Name = "SeguimientoDGV";
             this.SeguimientoDGV.RowHeadersWidth = 51;
             this.SeguimientoDGV.RowTemplate.Height = 24;
-            this.SeguimientoDGV.Size = new System.Drawing.Size(919, 379);
+            this.SeguimientoDGV.Size = new System.Drawing.Size(1209, 424);
             this.SeguimientoDGV.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(311, 19);
+            this.label1.Location = new System.Drawing.Point(451, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(256, 24);
             this.label1.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 450);
+            this.ClientSize = new System.Drawing.Size(1234, 495);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SeguimientoDGV);
             this.Name = "SeguimientoJugadores";
